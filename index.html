@@ -1,10 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Filtered CoPhy"/>
+    <title>Filtered CoPhy</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+
+    <link href="css/styles.css" rel="stylesheet"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+            type="text/javascript"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300ital…alic%7CVarela+Round:400%7CBungee+Shade:regular%7CRoboto:300,regular,500"
+          media="all">
+
 </head>
 <body>
-Test
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Filtered CoPhy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#abstract">Abstract</a></li>
+                <li class="nav-item"><a class="nav-link" href="#benchmark">Benchmark</a></li>
+                <li class="nav-item"><a class="nav-link" href="#model">Model</a></li>
+                <li class="nav-item"><a class="nav-link" href="#model">Download</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page content-->
+
+<!--<div class="row" id="box-search">-->
+<!--    <div class="thumbnail text-center mt-5">-->
+<!--        <img src="assets/title_bg.png" class="img-responsive col-md-6" style="width: 100%">-->
+<!--        <div class="caption text-center">-->
+<!--            <h2><b>Filtered-CoPhy</b> : Unsupervised Learning of Counterfactual Physics in Pixel Space</h2>-->
+<!--            <a href="www.google.fr">Anonymous authors</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- Background image -->
+<div class="bg-image .img-fluid. max-width: 100%"
+     style="background-image: url('assets/title_bg.png');
+            height: auto; background-repeat: no-repeat;background-size: cover;background-position: center center;
+">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-center mt-5 text-white container" style="padding-bottom: 1%">
+                <h2><b>Filtered-CoPhy</b> : Unsupervised Learning of Counterfactual Physics in Pixel Space</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <a href="https://www.google.fr" class="link-primary">Anonymous authors</a>
+</div>
+<!-- Background image -->
+
+<br/>
+<div class="container">
+    <div class="text-center">
+        <img src="assets/blocktower.gif" class="rounded img-thumbnail" style="width: 20%">
+        <img src="assets/balls.gif" class="rounded img-thumbnail" style="width: 20%; margin-left:10%">
+        <img src="assets/collision.gif" class="rounded img-thumbnail" style="width: 20%; margin-left:10%">
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<div class="container" id="abstract" style="padding-top:100px; margin-top:-100px;">
+    <div class="text-dark text-justify">
+        <h3>Abstract</h3>
+        Causal discovery is at the core of human cognition. It enables us to reason about the environment and make
+        counterfactual predictions about unseen scenarios, that can vastly differ from our previous experiences. We
+        consider
+        the task of causal discovery from videos in an end-to-end fashion without supervision on the ground-truth graph
+        structure. In particular, our goal is to discover the structural dependencies among environmental and object
+        variables: inferring the type and strength of interactions that have a causal effect on the behavior of the
+        dynamical system. Our model consists of (a) a perception module that extracts a semantically meaningful and
+        temporally consistent keypoint representation from images, (b) an inference module for determining the graph
+        distribution induced by the detected keypoints, and (c) a dynamics module that can predict the future by
+        conditioning on the inferred graph. We assume access to different configurations and environmental conditions,
+        i.e.,
+        data from unknown interventions on the underlying system; thus, we can hope to discover the correct underlying
+        causal graph without explicit interventions. We evaluate our method in a planar multi-body interaction
+        environment
+        and scenarios involving fabrics of different shapes like shirts and pants. Experiments demonstrate that our
+        model
+        can correctly identify the interactions from a short sequence of images and make long-term future predictions.
+        The
+        causal structure assumed by the model also allows it to make counterfactual predictions and extrapolate to
+        systems
+        of unseen interaction graphs or graphs of various sizes.
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <h3 id="benchmark" style="padding-top:100px; margin-top:-100px;">Benchmark</h3>
+    <div class="text-dark text-justify">
+        We introduce <b>Filtered-CoPhy</b>, a counterfactual physics benchmark suite for counterfactual reasoning in
+        pixel space. Build on the work of <a href="https://openreview.net/forum?id=SkeyppEFvS"
+                                             style="text-decoration:none">
+        Baradel & al. (2019)</a>, our benchmark is composed of three scenarios : BlocktowerCF, BallsCF and CollisionCF.
+        The
+        benchmark has been carefully designed and generated imposing constraints on identifiability and
+        counterfactuality. Each scenarios includes training, validation and testing experiments. An experiments is
+        represented
+        by two RGB sequences :
+        <div class="entry-content">
+            <ul>
+                <li>An observed sequence \(\mathbf{AB}\) with initial condition \(\mathbf{A}=\mathbf{X}_0\) and outcome
+                    \(\mathbf{D} = \mathbf{X}_{t=1..T}\). This sequence is used during the abduction step, to identify
+                    the counfounders
+                    variables.
+                </li>
+                <li>A counterfactual sequence \(\mathbf{CD}\) derived from \(\mathbf{AB}\). The initial conditions
+                    \(\mathbf{A}\)
+                    and \(\mathbf{C}\) are linked through a do-operator \(do(\mathbf{X}_0 = \mathbf{C})\), which
+                    modifies the
+                    initial condition through a visual intervention on the initial condition.
+                </li>
+            </ul>
+        </div>
+        A do-operation consists in a visually observable change in the initial physical setup, such as object
+        displacement or removal.
+
+        Experiments are parameterized by a set of intrinsic physical parameters which are not observable
+        from a single initial image A, refered as confounders. The counterfactual task consists in inferring the
+        counterfactual
+        outcome \(\mathbf{D}\) given the observed trajectory \(\mathbf{AB}\) and the counterfactual initial state
+        \(\mathbf{C}\).
+    </div>
+</div>
+<br/>
+
+<div class="container">
+
+    <nav class="nav nav-tabs">
+        <a class="nav-item nav-link active" href="#p1" data-toggle="tab">BlocktowerCF</a>
+        <a class="nav-item nav-link" href="#p2" data-toggle="tab">BallsCF</a>
+        <a class="nav-item nav-link" href="#p3" data-toggle="tab">CollisionCF</a>
+    </nav>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="p1">
+            <div class="row" style="border:none">
+                <div class="container" style="padding-top: 20px">
+                    <div class="col-4">
+                        <img class="rounded float-left" src="assets/blocktower.png"
+                             style="width: 100%; padding-right: 10px">
+                    </div>
+                    <div class=" col-12">
+                        <p class="text-justify">
+                            Each experiment involves \(K=3\) or \(4\) staked cubes in resting contact, but potentially
+                            in an
+                            instable
+                            configuration. The confounders variable are masses, which we discretize in \(m \in \{1,
+                            10\}\).
+                            When generating the experiments, we enforce an idenfiability constraint that guarantee that
+                            the
+                            masses mandatory for forecasting the counterfactual outcome \(\mathbf{CD}\) are idenfiable
+                            from
+                            the trajectory of the cube in \(\mathbf{AB}\).</p>
+                        <!--                        <br/>-->
+
+                        <table class="table table-bordered table-sm" style="width:68%;margin:auto">
+                            <thead>
+                            <tr>
+                                <th scope="col">Length</th>
+                                <th scope="col">Sampling rate</th>
+                                <th scope="col"># Training Exp.</th>
+                                <th scope="col"># Validation Exp.</th>
+                                <th scope="col"># Test Exp.</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>6 seconds</td>
+                                <td>25 FPS</td>
+                                <td>22 564</td>
+                                <td>6 016</td>
+                                <td>3 008</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-justify">
+                            Do-operations consist in either removing the top cube (around 30% of the dataset), or moving
+                            one
+                            cube on the horizontal plane. In this case, we make sure that the cube does not move too far
+                            from the tower,
+                            in order to maintain contact.</p>
+                        <div class="text-center">
+                            <img src="assets/equilibrium_blocktower.png" style="width:100%; padding-top:20px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="p2">
+            <div class="row" style="border:none">
+                <div class="container" style="padding-top: 20px">
+                    <div class="col-4">
+                        <img class="rounded float-left" src="assets/balls.png"
+                             style="width: 100%; padding-right: 10px">
+                    </div>
+                    <div class=" col-12">
+                        <p class="text-justify">
+                            Each experiment involves \(K=3, 4, 5\) or \(6\) sphere bouncing in a 2D squared arena. Each
+                            ball
+                            is set with an initial velocity that is not affected by the do-operation. The confounders
+                            variables
+                            are the mass of each sphere \(m \in \{1, 10\}\), and the initial velocities.
+                            When generating the experiments, we enforce an idenfiability constraint that guarantee that
+                            the masses mandatory for forecasting the counterfactual outcome \(\mathbf{CD}\) are
+                            idenfiable
+                            from the trajectory of the spheres in \(\mathbf{AB}\).</p>
+
+                        <table class="table table-bordered table-sm" style="width:68%;margin:auto">
+                            <thead>
+                            <tr>
+                                <th scope="col">Length</th>
+                                <th scope="col">Sampling rate</th>
+                                <th scope="col"># Training Exp.</th>
+                                <th scope="col"># Validation Exp.</th>
+                                <th scope="col"># Test Exp.</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>6 seconds</td>
+                                <td>25 FPS</td>
+                                <td>22 723</td>
+                                <td>6 000</td>
+                                <td>3 008</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-justify">
+                            Do-operations consist in either removing a sphere (around 30% of the dataset), or moving one
+                            sphere on the horizontal plane.</p>
+                        <div class="text-center">
+                            <img src="assets/equilibrium_balls.png" style="width:100%; padding-top:20px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="p3">
+            <div class="row" style="border:none">
+                <div class="container" style="padding-top: 20px">
+                    <div class="col-4">
+                        <img class="rounded float-left" src="assets/collision.png"
+                             style="width: 100%; padding-right: 10px">
+                    </div>
+                    <div class=" col-12">
+                        <p class="text-justify">
+                            Each experiment involves two objects: a sphere and a cylinder, one of which being static
+                            in the center of the scene, the other moving toward the center. The moving object is set
+                            with an
+                            initial velocity that is not affected by the do-operation. The confounders variables
+                            are the masses of each object \(m \in \{1, 10\}\), and the initial velocity of the moving
+                            object.
+                            When generating the experiments, we enforce an idenfiability constraint that guarantee that
+                            the masses mandatory for forecasting the counterfactual outcome \(\mathbf{CD}\) are
+                            idenfiable
+                            from the trajectory of the spheres in \(\mathbf{AB}\).</p>
+
+                        <table class="table table-bordered table-sm" style="width:68%;margin:auto">
+                            <thead>
+                            <tr>
+                                <th scope="col">Length</th>
+                                <th scope="col">Sampling rate</th>
+                                <th scope="col"># Training Exp.</th>
+                                <th scope="col"># Validation Exp.</th>
+                                <th scope="col"># Test Exp.</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>3 seconds</td>
+                                <td>25 FPS</td>
+                                <td>13 980</td>
+                                <td>6 000</td>
+                                <td>3 000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-justify">
+                            Do-operations consist of either a flip of
+                            the cylinder orientation between vertical or horizontal, or a shift of the position of the
+                            moving object
+                            relative to the resting one in one of the three canonical directions \(x\), \(y\) and
+                            \(z\).</p>
+                        <div class="text-center">
+                            <img src="assets/equilibrium_collision.png" style="width:100%; padding-top:20px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container" style="padding-top:100px; margin-top:-100px;">
+    <h3 id="model" style="padding-top:100px; margin-top:-100px;">Model</h3>
+
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container" style="padding-top:100px; margin-top:-100px;">
+    <h3 id="download" style="padding-top:100px; margin-top:-100px;">Download</h3>
+    Available soon...
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- Bootstrap core JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
