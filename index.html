@@ -113,20 +113,18 @@
     <h3 id="benchmark" style="padding-top:100px; margin-top:-100px;">Benchmark</h3>
     <div class="text-dark text-justify">
         We introduce <b>Filtered-CoPhy</b>, a counterfactual physics benchmark suite for counterfactual reasoning in
-        pixel space. Build on the work of <a href="https://openreview.net/forum?id=SkeyppEFvS"
-                                             style="text-decoration:none">
+        pixel space. Building on the work of <a href="https://openreview.net/forum?id=SkeyppEFvS"
+                                                style="text-decoration:none">
         Baradel & al. (2019)</a>, our benchmark is composed of three scenarios : BlocktowerCF, BallsCF and CollisionCF.
-        The
-        benchmark has been carefully designed and generated imposing constraints on identifiability and
-        counterfactuality. Each scenarios includes training, validation and testing experiments. An experiments is
+        The benchmark has been carefully designed and generated imposing constraints on identifiability and
+        counterfactuality. Each scenario includes training, validation and testing experiments. An experiment is
         represented
         by two RGB sequences :
         <div class="entry-content">
             <ul>
                 <li>An observed sequence \(\mathbf{AB}\) with initial condition \(\mathbf{A}=\mathbf{X}_0\) and outcome
                     \(\mathbf{D} = \mathbf{X}_{t=1..T}\). This sequence is used during the abduction step, to identify
-                    the counfounders
-                    variables.
+                    the counfounder variables.
                 </li>
                 <li>A counterfactual sequence \(\mathbf{CD}\) derived from \(\mathbf{AB}\). The initial conditions
                     \(\mathbf{A}\)
@@ -166,17 +164,11 @@
                     </div>
                     <div class=" col-12">
                         <p class="text-justify">
-                            Each experiment involves \(K=3\) or \(4\) staked cubes in resting contact, but potentially
-                            in an
-                            instable
-                            configuration. The confounders variable are masses, which we discretize in \(m \in \{1,
-                            10\}\).
-                            When generating the experiments, we enforce an idenfiability constraint that guarantee that
-                            the
-                            masses mandatory for forecasting the counterfactual outcome \(\mathbf{CD}\) are idenfiable
-                            from
-                            the trajectory of the cube in \(\mathbf{AB}\).</p>
-                        <!--                        <br/>-->
+                            Each experiment involves \(K=3\) or \(4\) stacked cubes in resting contact, but potentially
+                            in an instable configuration. The confounder variables are masses, which we discretize in
+                            \(m \in \{1, 10\}\). When generating the experiments, we enforce an idenfiability constraint
+                            that guarantee that the masses mandatory for forecasting the counterfactual outcome
+                            \(\mathbf{CD}\) are idenfiable from the trajectory of the cube in \(\mathbf{AB}\).</p>
 
                         <table class="table table-bordered table-sm" style="width:68%;margin:auto">
                             <thead>
@@ -205,7 +197,7 @@
                             from the tower,
                             in order to maintain contact.</p>
                         <div class="text-center">
-                            <img src="assets/equilibrium_blocktower.png" style="width:100%; padding-top:20px">
+                            <img src="assets/equilibrium_blocktower.svg" style="width:100%; padding-top:20px">
                         </div>
                     </div>
                 </div>
@@ -222,7 +214,7 @@
                         <p class="text-justify">
                             Each experiment involves \(K=3, 4, 5\) or \(6\) sphere bouncing in a 2D squared arena. Each
                             ball
-                            is set with an initial velocity that is not affected by the do-operation. The confounders
+                            is set with an initial velocity that is not affected by the do-operation. The confounder
                             variables
                             are the mass of each sphere \(m \in \{1, 10\}\), and the initial velocities.
                             When generating the experiments, we enforce an idenfiability constraint that guarantee that
@@ -254,7 +246,7 @@
                             Do-operations consist in either removing a sphere (around 30% of the dataset), or moving one
                             sphere on the horizontal plane.</p>
                         <div class="text-center">
-                            <img src="assets/equilibrium_balls.png" style="width:100%; padding-top:20px">
+                            <img src="assets/equilibrium_balls.svg" style="width:100%; padding-top:20px">
                         </div>
                     </div>
                 </div>
@@ -272,7 +264,7 @@
                             Each experiment involves two objects: a sphere and a cylinder, one of which being static
                             in the center of the scene, the other moving toward the center. The moving object is set
                             with an
-                            initial velocity that is not affected by the do-operation. The confounders variables
+                            initial velocity that is not affected by the do-operation. The confounder variables
                             are the masses of each object \(m \in \{1, 10\}\), and the initial velocity of the moving
                             object.
                             When generating the experiments, we enforce an idenfiability constraint that guarantee that
@@ -307,7 +299,7 @@
                             relative to the resting one in one of the three canonical directions \(x\), \(y\) and
                             \(z\).</p>
                         <div class="text-center">
-                            <img src="assets/equilibrium_collision.png" style="width:100%; padding-top:20px">
+                            <img src="assets/equilibrium_collision.svg" style="width:100%; padding-top:20px">
                         </div>
                     </div>
                 </div>
@@ -321,7 +313,15 @@
 <br/>
 <div class="container" style="padding-top:100px; margin-top:-100px;">
     <h3 id="model" style="padding-top:100px; margin-top:-100px;">Model</h3>
-
+    <div class="embed-responsive embed-responsive-16by9 col-sm-8 offset-md-2 ">
+        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/y40wzlfIr8g"
+                allowfullscreen></iframe>
+    </div>
+    <div class="col-md-12">
+        <br/>
+        PhyDNet : <a href="https://arxiv.org/abs/2003.01460">Le Guen et al. (CVPR 2020)</a> <br/>
+        V-CDN : <a href="https://arxiv.org/abs/2007.00631">Li et al. (NeurIPS 2020)</a>
+    </div>
 </div>
 <br/>
 <br/>
