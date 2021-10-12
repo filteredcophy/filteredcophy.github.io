@@ -16,6 +16,19 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300ital…alic%7CVarela+Round:400%7CBungee+Shade:regular%7CRoboto:300,regular,500"
           media="all">
+    <style>
+        .item {
+            width: 200px;
+            text-align: center;
+            display: block;
+            background-color: transparent;
+            border: 1px solid transparent;
+            margin-right: 10px;
+            margin-bottom: 1px;
+            float: left;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -66,6 +79,11 @@
 <div class="container text-center">
     <a href="https://www.google.fr" class="link-primary">Anonymous authors</a>
 </div>
+<!--<div class="container text-center">-->
+<!--    <a href="https://openreview.net/forum?id=1L0C5ROtFp" class="link-primary">Paper</a>-->
+<!--    <a href="https://www.google.com" class="link-primary">GitHub (soon)</a>-->
+<!--</div>-->
+
 <!-- Background image -->
 
 <br/>
@@ -76,7 +94,34 @@
         <img src="assets/collision.gif" class="rounded img-thumbnail" style="width: 20%; margin-left:10%">
     </div>
 </div>
+
+
 <br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="item col-sm-3">
+            <a href="https://openreview.net/forum?id=1L0C5ROtFp" class="link-primary text-dark">
+                <img src="assets/paper.png" width="15%"/>
+                <b>Paper</b></a>
+        </div>
+
+        <div class="item col-sm-3">
+            <a href="https://www.google.com" class="link-primary text-dark">
+                <img src="assets/github.png" width="15%"/>
+                <b>GitHub (soon)</b></a>
+        </div>
+
+        <div class="item col-sm-3">
+            <a href="https://www.google.com" class="link-primary text-dark">
+                <img src="assets/data.png" width="15%"/>
+                <b>Dataset (soon)</b></a>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+
 <br/>
 <br/>
 
@@ -312,15 +357,29 @@
 <br/>
 <br/>
 <div class="container" style="padding-top:100px; margin-top:-100px;">
-    <h3 id="model" style="padding-top:100px; margin-top:-100px;">Model</h3>
+    <h3 id="model" style="padding-top:100px; margin-top:-100px;">Video explanation of the model </h3>
     <div class="embed-responsive embed-responsive-16by9 col-sm-8 offset-md-2 ">
         <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/y40wzlfIr8g"
                 allowfullscreen></iframe>
     </div>
     <div class="col-md-12">
         <br/>
-        PhyDNet : <a href="https://arxiv.org/abs/2003.01460">Le Guen et al. (CVPR 2020)</a> <br/>
-        V-CDN : <a href="https://arxiv.org/abs/2007.00631">Li et al. (NeurIPS 2020)</a>
+        References of baseline methods : <br/>
+        <div class="entry-content">
+            <ul>
+                <li><a href="https://arxiv.org/abs/2003.01460">PhyDNet</a> : Vincent Le Guen and Nicolas Thome.
+                    <i>Disentangling physical dynamics from unknown factors forunsupervised video prediction</i>. In
+                    Computer Vision
+                    and Pattern Recognition (CVPR), 2020.
+                </li>
+                <li><a href="https://arxiv.org/abs/2007.00631">V-CDN</a> : Yunzhu Li, Antonio Torralba, Anima
+                    Anandkumar, Dieter
+                    Fox, and Animesh Garg.<i>Causal discovery in physical systems from videos</i>.Advances in Neural
+                    Information
+                    Processing Systems, 33,2020
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <br/>
